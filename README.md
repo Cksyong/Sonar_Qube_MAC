@@ -32,7 +32,7 @@ https://nodejs.org/ko/download
 -node-v18.17.1-win-x64.zip
 
 1-2-7)  python
-https://www.python.org/downloads/windows/
+https://www.python.org/downloads/macos/
 -python-3.10.10-embed-amd64.zip
 
 
@@ -61,7 +61,7 @@ https://www.egovframe.go.kr/wiki/lib/exe/fetch.php?media=egovframework:dev:imp:e
   sonarqube-10.1.0.73491
 
 2-2) 환경변수 설정
-C:\StaticCodeAnalysis\sonarqube_stat.bat  파일 생성
+Applications/StaticCodeAnalysis\startSonarQube.sh  파일 생성
 
 
 SET JAVA_HOME=Applications/StaticCodeAnalysis/jdk-17.0.8+7
@@ -86,7 +86,6 @@ start %SONARQUBE_HOME%/bin/macosx-universal-64/sonar.sh
 - http://localhost:9000
 - admin/admin
 - 패스워드 변경
-   Sonar@ube
 
 - How do you want to create your project?
 
@@ -97,14 +96,14 @@ start %SONARQUBE_HOME%/bin/macosx-universal-64/sonar.sh
 => SonarQube needs to be restarted in order toinstall 2 plugins (Restart Server) 클릭
 
 
-C:\StaticCodeAnalysis\sonarqube-10.1.0.73491\extensions\downloads 에서 확인 가능
-C:\StaticCodeAnalysis\sonarqube-10.1.0.73491\extensions\plugins 폴더로 자동 이동.
+Applications/StaticCodeAnalysis\sonarqube-10.1.0.73491\extensions\downloads 에서 확인 가능
+Applications/StaticCodeAnalysis\sonarqube-10.1.0.73491\extensions\plugins 폴더로 자동 이동.
 
 
 엑셀 리포트 생성 플러그인
 https://github.com/cnescatlab/sonar-cnes-report/releases에서 다운로드 받은 sonar-cnes-report-4.2.0.jar을
-C:\StaticCodeAnalysis\sonarqube-10.1.0.73491\extensions\downloads로 이동
-SonarQube Restart Server하면 C:\StaticCodeAnalysis\sonarqube-10.1.0.73491\extensions\plugins 폴더로 자동 이동함.
+Applications/StaticCodeAnalysis\sonarqube-10.1.0.73491\extensions\downloads로 이동
+SonarQube Restart Server하면 Applications/StaticCodeAnalysis\sonarqube-10.1.0.73491\extensions\plugins 폴더로 자동 이동함.
 
 => SonarQube needs to be restarted in order toinstall 2 plugins (Restart Server) 클릭
 
