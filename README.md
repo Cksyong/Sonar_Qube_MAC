@@ -152,6 +152,23 @@ and run the following command:
   -Dsonar.token=sqp_4704d37a122eea231b615d9b82e36e1234567890
 --------------------------------------------------------
 
+and Other (for JS, TS, GO, Python, PHP, ...)
+
+
+sonar-scanner \
+  -Dsonar.projectKey=test_sonar \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.token=sqp_9f07111423a433dc7abf776ce8e2be021234567890
+
+만약 java의 폴더만 진단하고 싶을 경우
+
+sonar-scanner \
+  -Dsonar.projectKey=test_sonar \
+  -Dsonar.sources=src/main/java \
+  -Dsonar.java.binaries=build/classes \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.token=sqp_f7a195b1d2559e163f1ae5e991fc741234567890
 
 4-3) Quality Profiles 설정
 메뉴: Quality Profiles -> Filter profiles by: java 검색
