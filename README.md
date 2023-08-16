@@ -13,7 +13,7 @@ https://maven.apache.org/download.cgi
 1-2-2) OpenJDK
 https://adoptium.net/temurin/releases/
 - 
--OpenJDK17U-jdk_x64_windows_hotspot_17.0.8_7.zip
+-OpenJDK17U-jdk_x64_macOS_17.0.8_7.tar
 
 1-2-3) gradle
 https://gradle.org/releases/
