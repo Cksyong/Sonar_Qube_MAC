@@ -149,7 +149,7 @@ plugins {
 
 and run the following command:
 
-./gradlew sonar \
+./gradlew sonar \\\
   -Dsonar.projectKey=StudentSoup \
   -Dsonar.projectName='StudentSoup' \
   -Dsonar.host.url=http://localhost:9000 \
@@ -159,7 +159,7 @@ and run the following command:
 and Other (for JS, TS, GO, Python, PHP, ...)
 
 
-sonar-scanner \
+sonar-scanner \\
   -Dsonar.projectKey=test_sonar \
   -Dsonar.sources=. \
   -Dsonar.host.url=http://localhost:9000 \
@@ -167,7 +167,7 @@ sonar-scanner \
 
 만약 java의 폴더만 진단하고 싶을 경우
 
-sonar-scanner \
+sonar-scanner \\
   -Dsonar.projectKey=test_sonar \
   -Dsonar.sources=src/main/java \
   -Dsonar.java.binaries=build/classes \
