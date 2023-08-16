@@ -20,7 +20,7 @@ https://gradle.org/releases/
 -gradle-8.2-bin.zip
 
 1-2-4) sonarqube
-https://www.sonarsource.com/open-source-editions/
+https://www.sonarsource.com/products/sonarqube/downloads/
 -sonarqube-10.1.0.73491.zip
 
 1-2-5) sonarqube 리포트 플러그인
@@ -29,11 +29,9 @@ https://github.com/cnescatlab/sonar-cnes-report/releases
 
 1-2-6) react프로젝트를 위한 nodejs 설치
 https://nodejs.org/ko/download
--node-v18.17.1-win-x64.zip
 
 1-2-7)  python
 https://www.python.org/downloads/macos/
--python-3.10.10-embed-amd64.zip
 
 
 
