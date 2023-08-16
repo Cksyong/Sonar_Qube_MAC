@@ -63,24 +63,29 @@ https://www.egovframe.go.kr/wiki/lib/exe/fetch.php?media=egovframework:dev:imp:e
 2-2) 환경변수 설정
 Applications/StaticCodeAnalysis\startSonarQube.sh  파일 생성
 
+<img width="876" alt="스크린샷 2023-08-16 오후 1 13 58" src="https://github.com/Cksyong/sonar/assets/108333111/81998990-833b-4971-afa8-617545683538">
 
-SET JAVA_HOME=Applications/StaticCodeAnalysis/jdk-17.0.8+7
-SET MAVEN_HOME=Applications/StaticCodeAnalysis/apache-maven-3.9.4
-SET GRADLE_HOME=Applications/StaticCodeAnalysis/gradle-8.2
-SET SONARQUBE_HOME=Applications//StaticCodeAnalysis/sonarqube-10.1.0.73491
+export JAVA_HOME=/Applications/StaticCodeAnalysis/jdk-17.0.8+7
+export MAVEN_HOME=/Applications/StaticCodeAnalysis/apache-maven-3.9.4
+export GRADLE_HOME=/Applications/StaticCodeAnalysis/gradle-8.2
+export SONARQUBE_HOME=/Applications/StaticCodeAnalysis/sonarqube-10.1.0.73491
+export PYTHON_HOME=/Applications/StaticCodeAnalysis/python-3.10.10
+export NODEJS_HOME=/usr/local/bin/node-v20.5.0
 
-SET NODEJS_HOME=Applications/StaticCodeAnalysis/node-v20.5.0-win-x64
-
-export PATH="Applications/StaticCodeAnalysis/bin:/Applications/bin:/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$GRADLE_HOME/bin:$SONARQUBE_HOME/bin:$NODEJS_HOME:$PYTHON_HOME"
+export PATH="/usr/local/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$GRADLE_HOME/bin:$SONARQUBE_HOME/bin:$NODEJS_HOME:$PYTHON_HOME/bin:$PATH"
 
 start %SONARQUBE_HOME%/bin/macosx-universal-64/sonar.sh
 
+<img width="792" alt="스크린샷 2023-08-16 오후 1 14 38" src="https://github.com/Cksyong/sonar/assets/108333111/47e5b623-b139-4e66-894f-8172dc41ddb9">
+
+
+
 3. sonarqube 실행 및 플러그인 설치
 3-1) 실행
-- cmd창 관리자로 실행
-최단 루트경로로 가서 (Macintosh HD)
+- cmd창 관리자로 실행(java 17 버전상태) (Macintosh HD)
 /Applications/StaticCodeAnalysis/Downloads/sonarqube-10.1.0.73491/bin/macosx-universal-64/sonar.sh console
 
+<img width="567" alt="스크린샷 2023-08-16 오후 1 20 38" src="https://github.com/Cksyong/sonar/assets/108333111/5df44ad8-702c-4c4d-83ed-6ae266cc77c3">
 
 3-2) 로그인
 - http://localhost:9000
@@ -95,10 +100,12 @@ start %SONARQUBE_HOME%/bin/macosx-universal-64/sonar.sh
 => Findbugs 검색 (FindbugsEXTERNAL ANALYSERS) install(설치)
 => SonarQube needs to be restarted in order toinstall 2 plugins (Restart Server) 클릭
 
+![스크린샷 2023-08-16 오후 1 53 25](https://github.com/Cksyong/sonar/assets/108333111/f2f05cc2-e63a-41c6-a00e-eb4af8eff969)
 
 Applications/StaticCodeAnalysis\sonarqube-10.1.0.73491\extensions\downloads 에서 확인 가능
 Applications/StaticCodeAnalysis\sonarqube-10.1.0.73491\extensions\plugins 폴더로 자동 이동.
 
+<img width="1501" alt="스크린샷 2023-08-16 오후 1 54 42" src="https://github.com/Cksyong/sonar/assets/108333111/fdb22f92-9aea-42df-ae28-937e93b9d3ef">
 
 엑셀 리포트 생성 플러그인
 https://github.com/cnescatlab/sonar-cnes-report/releases에서 다운로드 받은 sonar-cnes-report-4.2.0.jar을
@@ -109,7 +116,7 @@ SonarQube Restart Server하면 Applications/StaticCodeAnalysis\sonarqube-10.1.0.
 
 4. 소스코드 진단
 4-1) 프로젝트 생성
-메뉴: Project -> Manually 클릭
+메뉴: Project -> Create Project ->Manually 클릭
 
 4-1-1) creat project
 Project display name: StudentSoup
@@ -179,7 +186,7 @@ Sonar way가 DEFAULT인데, FindBugs + FB-ContribBU(768Rules) : Used에서 defau
 - 자신의 프로젝트에 맞게 Maven 스크립트와 Gradle 스크립트 실행
 
 
-gradlew sonar -Dsonar.projectKey=StudentSoup -Dsonar.projectName='StudentSoup' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_4704d37a122eea231b615d9b82e36e819fcd7d94
+gradlew sonar -Dsonar.projectKey=StudentSoup -Dsonar.projectName='StudentSoup' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_4704d37a122eea231b615d9b82e36e1234567890
 
 
 5. SW개발보안 가이드 적용
@@ -188,7 +195,7 @@ gradlew sonar -Dsonar.projectKey=StudentSoup -Dsonar.projectName='StudentSoup' -
 
 
 오류 
-gradlew sonar -Dsonar.projectKey=StudentSoup -Dsonar.projectName='StudentSoup' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_4704d37a122eea231b615d9b82e36e819fcd7d94
+gradlew sonar -Dsonar.projectKey=StudentSoup -Dsonar.projectName='StudentSoup' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_4704d37a122eea231b615d9b82e36e1234567890
 
 실행시 Exception in thread "main" java.net.UnknownHostException: services.gradle.org 오류
 
